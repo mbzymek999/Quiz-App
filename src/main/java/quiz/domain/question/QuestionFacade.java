@@ -10,10 +10,16 @@ public interface QuestionFacade {
 
     List<QuestionDto> readAll();
 
+    QuestionDto readByClientId(String clientId);
+
+    QuestionDto randomClient();
+
     QuestionDto createQuestion(QuestionRequest request);
 
     QuestionDto updateQuestion(QuestionUpdateRequest updateRequest, String clientId);
 
     QuestionDto deleteQuestion(String clientId);
+
+    List<Question> findAllByDisplayedStatus();
 
 }

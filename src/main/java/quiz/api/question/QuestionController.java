@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.*;
 import quiz.domain.question.QuestionFacade;
 
 import javax.validation.Valid;
+import javax.validation.constraints.Size;
 import java.util.List;
 
 @RestController
@@ -20,6 +21,16 @@ public class QuestionController {
     @GetMapping("/questions")
     List<QuestionDto> readAllQuestions() {
         return facade.readAll();
+    }
+
+    @GetMapping("/question/{clientId}")
+    QuestionDto readByClientId(@PathVariable(value = "clientId") @Size(min = 10, max = 10) String clientId) {
+        return facade.readByClientId(clientId);
+    }
+
+    @GetMapping("/question/random")
+    QuestionDto readRandomQuestion() {
+        return facade.randomClient();
     }
 
     @PostMapping("/create/question")

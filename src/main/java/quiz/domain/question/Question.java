@@ -18,14 +18,17 @@ public class Question {
 
     private int known;
 
+    private int displayedStatus;
+
     public Question() {
     }
 
-    public Question(String clientId, String title, String description, int known) {
+    public Question(String clientId, String title, String description, int known, int displayedStatus) {
         this.clientId = clientId;
         this.title = title;
         this.description = description;
         this.known = known;
+        this.displayedStatus = displayedStatus;
     }
 
     public String getClientId() {
@@ -50,5 +53,9 @@ public class Question {
 
     public void setKnown(int known) {
         this.known = known;
+    }
+
+    public void setDisplayedStatus(int displayedStatus) {
+        this.displayedStatus = displayedStatus;
     }
 }
