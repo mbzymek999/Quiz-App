@@ -43,6 +43,10 @@ public class Question {
         return description;
     }
 
+    public int getKnown() {
+        return known;
+    }
+
     public void setTitle(String title) {
         this.title = title;
     }

@@ -7,11 +7,13 @@ public class QuestionDto {
     private final String clientId;
     private final String title;
     private final String description;
+    private final int known;
 
     public QuestionDto(Question question) {
         this.clientId = question.getClientId();
         this.title = question.getTitle();
         this.description = question.getDescription();
+        this.known = question.getKnown();
     }
 
     public String getClientId() {
@@ -24,5 +26,9 @@ public class QuestionDto {
 
     public String getDescription() {
         return description;
+    }
+
+    public int getKnown() {
+        return known;
     }
 }

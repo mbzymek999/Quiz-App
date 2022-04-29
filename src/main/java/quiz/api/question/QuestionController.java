@@ -9,6 +9,7 @@ import javax.validation.constraints.Size;
 import java.util.List;
 
 @RestController
+@CrossOrigin(origins = "*", maxAge = 3600)
 public class QuestionController {
 
     private final QuestionFacade facade;
@@ -48,4 +49,8 @@ public class QuestionController {
         return facade.deleteQuestion(clientId);
     }
 
+    @GetMapping("/test")
+    public String test() {
+        return "test";
+    }
 }
